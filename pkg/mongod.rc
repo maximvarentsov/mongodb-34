@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: mongod.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
+
+daemon="${TRUEPREFIX}/bin/mongod"
+daemon_flags="-f ${SYSCONFDIR}/mongodb.conf"
+daemon_user="_mongodb"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
